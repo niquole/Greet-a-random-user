@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        
+        <h1>{{ greet }} {{ name }}</h1>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: "#app",
+                data() {
+                    return {
+                        names: ["Khaleesi", "Cal Drogo", "Arya Stark", "John Snow", "Lady Gaga", "Nick Jonas", "Michael Jackson"],
+                        greets: ["Hey", "Wassup", "How you doin", "Sup ma bro", "Dobar dan", "Bonjour", "Kalimera"],
+                        name: "none",
+                        greet: "none"
+                    }
+                },
+                mounted() {
+                    this.name = this.names[Math.floor(Math.random() * this.names.length)];
+                    this.greet = this.greets[Math.floor(Math.random() * this.greets.length)];
+                }
+                
+            })
+        </script>
+        
+        
+    </div>
+</body>
+</html>
